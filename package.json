@@ -1,0 +1,10 @@
+{
+  "name": "cave-spring-landscaping-website",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Cave Spring Landscaping - Roanoke, Virginia",
+  "scripts": {
+    "start": "npx serve . --listen 3000",
+    "build": "echo 'Static site, no build step required'"
+  }
+}
