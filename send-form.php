@@ -1,7 +1,7 @@
 <?php
 header('Content-Type: application/json');
 
-$to = "info@cavespringlandscapellc.com";
+$to = "info@cavespringlandscapingllc.com";
 
 function clean($value) {
     $value = trim($value ?? '');
@@ -36,7 +36,7 @@ $body .= "Email: $email\n";
 $body .= "Service Needed: $service\n";
 $body .= "Property Details:\n$message\n";
 
-$headers = "From: Cave Spring Landscaping Website <noreply@cavespringlandscapellc.com>\r\n";
+$headers = "From: Cave Spring Landscaping Website <noreply@cavespringlandscapingllc.com>\r\n";
 $headers .= "Reply-To: $email\r\n";
 $headers .= "Content-Type: text/plain; charset=UTF-8\r\n";
 
