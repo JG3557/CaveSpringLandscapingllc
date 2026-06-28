@@ -1685,14 +1685,32 @@
     /* ── Form submission ─────────────────────────────── */
     function handleSubmit(e) {
       e.preventDefault();
+      const form = document.getElementById('quoteForm');
       const btn = document.getElementById('submitBtn');
+      const originalBtnText = btn.innerHTML;
       btn.disabled = true;
       btn.textContent = 'Sending…';
-      // Simulate async submit — wire to real backend or Formspree/Netlify
-      setTimeout(() => {
-        document.getElementById('quoteForm').style.display = 'none';
-        document.getElementById('formSuccess').style.display = 'block';
-      }, 900);
+
+      fetch('send-form.php', {
+        method: 'POST',
+        body: new FormData(form)
+      })
+        .then(res => res.json())
+        .then(data => {
+          if (data.success) {
+            form.style.display = 'none';
+            document.getElementById('formSuccess').style.display = 'block';
+          } else {
+            alert('Sorry, something went wrong sending your request. Please call or email us directly.');
+            btn.disabled = false;
+            btn.innerHTML = originalBtnText;
+          }
+        })
+        .catch(() => {
+          alert('Sorry, something went wrong sending your request. Please call or email us directly.');
+          btn.disabled = false;
+          btn.innerHTML = originalBtnText;
+        });
     }
   </script>
 </body>
