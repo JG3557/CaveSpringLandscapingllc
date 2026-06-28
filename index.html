@@ -1701,7 +1701,7 @@
             form.style.display = 'none';
             document.getElementById('formSuccess').style.display = 'block';
           } else {
-            alert('Sorry, something went wrong sending your request. Please call or email us directly.');
+            alert(data.error || 'Sorry, something went wrong sending your request. Please call or email us directly.');
             btn.disabled = false;
             btn.innerHTML = originalBtnText;
           }
