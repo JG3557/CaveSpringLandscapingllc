@@ -36,7 +36,7 @@ $body .= "Email: $email\n";
 $body .= "Service Needed: $service\n";
 $body .= "Property Details:\n$message\n";
 
-$headers = "From: Cave Spring Landscaping Website <noreply@cavespringlandscapingllc.com>\r\n";
+$headers = "From: Cave Spring Landscaping Website <info@cavespringlandscapingllc.com>\r\n";
 $headers .= "Reply-To: $email\r\n";
 $headers .= "Content-Type: text/plain; charset=UTF-8\r\n";
 
